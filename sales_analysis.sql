@@ -1,45 +1,45 @@
 ## Sales Perfomance Analysis
 
-##Total Sales
-SELECT SUM(sales)AS total_sales
+##Total Revenue
+SELECT SUM(Revenue) AS total_revenue
 FROM sales;
 
-## Total Profit
-SELECT SUM(profit) AS total_profit
+## Total Units Sold
+SELECT SUM(Units_sold) AS total_units_sold
 FROM sales;
 
-## Sales by product
-SELECT product,
-  SUM(sales) AS total_sales
+## Revenue by Product
+SELECT Product,
+  SUM(Revenue) AS total_revenue
 FROM sales
 GROUP BY product
-ORDER BY total_sales DESC;
+ORDER BY total_revenue DESC;
 
-## Sales by Region
-SELECT region,
-   SUM(sales) AS total_sales 
+## Revenue by City
+SELECT City,
+   SUM(Revenue) AS total_revenue
 FROM sales
-GROUP BY region
-ORDER BY total_sales DESC;
+GROUP BY City
+ORDER BY total_revenue DESC;
 
-## Top 5 Products by Sales
-SELECT product,
-   SUM(sales) AS total_sales
+## Top 5 Products by Revenue
+SELECT Product,
+   SUM(Revenue) AS total_revenue
 FROM sales
 GROUP BY product
-ORDER BY total_sales DESC
+ORDER BY total_revenue DESC
 LIMIT 5;
 
-## Profit by Product
-SELECT product,
-  SUM(profit) AS total_profit
+## Average Unit Price by Product
+SELECT Product,
+  AVG(unit_price) AS average_unit_price
 FROM sales
 GROUP BY product
-ORDER BY total_profit DESC;
+ORDER BY avarage_unit_price DESC;
 
-## Profit by Region
-SELECT region,
-  SUM(profit) AS total_profit DESC;
+## Revenue by Date
+SELECT Date,
+  SUM(Revenue) AS daily_revenue 
 FROM sales
-GROUP BY region
-ORDER BY total_profit DESC;
+GROUP BY Date
+ORDER BY Date;
