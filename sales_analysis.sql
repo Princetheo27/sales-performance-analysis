@@ -43,3 +43,12 @@ SELECT Date,
 FROM sales
 GROUP BY Date
 ORDER BY Date;
+
+SELECT SUM(c6) AS total_revenue
+FROM Sales_data;
+
+SELECT c3 AS product,
+   SUM(c6) AS total revenue
+FROM Sales_data
+GROUP BY c3
+ORDER BY total_revenue DESC;
