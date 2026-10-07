@@ -113,10 +113,61 @@ WHERE c3 NOT IN ('Product','Monitor')
  AND c6>0;
 
 SELEcT c3 AS product,
-  c5 AS units_sold 
+  c5 AS units_sold,
   c6 AS revenue
 FROM Sales_data
 WHERE c3 NOT IN ('Product','MOnitor')
- AND c6>0
+ AND c6>0;
+
+SELECT c3 AS product,
+SUM(c6) AS total_revenue
+FROM Sales_data
+WHERE c3 NOT IN ('Product','Monitor')
+AND c6>0
+GROUP BY c3
+ORDER BY total_revenue DESC;
+
+SELECT c3 AS product,
+ SUM(c5) AS total_units_sold
+FROM Sales_data
+WHERE c3 NOT IN('Product','Monitor')
+AND c5>0
+GROUP BY c3
+ORDER BY total_units_sold DESC;
+
+SELECT c2 AS city,
+SUM(c6) AS total_revenue
+FROM Sales_data
+WHERE c2 NOT IN('City')
+AND c6>0
+GROUP BY c2
+ORDER BY total_revenue DESC;
+
+SELECT c2 AS city,
+SUM(c5) AS total_units_sold
+FROM Sales_data
+WHERE c2 NOT IN ('CITY')
+AND c5>0
+GROUP BY c2
+ORDER BY total_units_sold DESC;
+
+SELECT c3 AS product,
+AVG(c6) AS average_revenue
+FROM Sales_data
+WHRE c3 NOT IN('Product','Monitor')
+AND c6>0
+GROUP BY c3
+ORDER BY average_revenue DESC;
+
+SELECT                    
+  SUM(C5) AS total_revenue
+FROM Sales_data 
+WHERE c3 NOT IN ('Product','MONITOR')
+AND c5>o;
+
+
+
+
+
 
 
