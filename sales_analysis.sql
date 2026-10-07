@@ -52,3 +52,37 @@ SELECT c3 AS product,
 FROM Sales_data
 GROUP BY c3
 ORDER BY total_revenue DESC;
+
+SELECT c2 AS city
+   SUM(c6) AS total_revenue
+FROM Sales_data 
+GROUP BY c2
+ORDER BY total_revenue DESC;
+
+SELECT SUM(c4) AS total_units_sold
+FROM Sales_data
+
+SELECT AVG(c5) AS avarage_unit_price
+FROM Sales_data;
+
+SELECT c3 AS product,
+  SUM(c6) AS total_revenue
+FROM Sales_data 
+WHERE c3<>'Product'
+GROUP BY c3
+ORDER BY total_revenue
+
+SELECT c2 AS city,
+  SUM(c6) AS total_revenue
+FROM Sales_data
+WHERE c2<>'City'
+GROUP BY c2
+ORDER BY total_revenue DESC;
+
+SELECT c2 AS city,
+   SUM(c6) AS total_revenue
+FROM Sales_data
+WHERE c2!='city'
+AND c6>0
+GROUP BY c2
+ORDER BY total_revenue DESC;
