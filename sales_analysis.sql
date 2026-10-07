@@ -86,3 +86,18 @@ WHERE c2!='city'
 AND c6>0
 GROUP BY c2
 ORDER BY total_revenue DESC;
+
+SELECT c1 AS date,
+   SUM(c6) AS total_revenue
+FROM Sales_data
+WHERE c6>0
+GROUP BY c1
+ORDER BY c1
+
+SELECT c3 AS product,
+   SUM(c4) AS total_units_sold
+   SUM(c6) AS total_revenue
+FROM Sales_data
+WHERE c4>0
+GROUP BY c3
+ORDER BY total_revenue DESC;
