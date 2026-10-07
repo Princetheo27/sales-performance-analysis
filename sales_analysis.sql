@@ -87,17 +87,36 @@ AND c6>0
 GROUP BY c2
 ORDER BY total_revenue DESC;
 
-SELECT c1 AS date,
-   SUM(c6) AS total_revenue
-FROM Sales_data
-WHERE c6>0
-GROUP BY c1
-ORDER BY c1
-
 SELECT c3 AS product,
    SUM(c4) AS total_units_sold
    SUM(c6) AS total_revenue
 FROM Sales_data
-WHERE c4>0
+WHERE c3 NOT IN ('Product','Monitor')
 GROUP BY c3
 ORDER BY total_revenue DESC;
+
+SELECT c2 AS city,
+   c3 AS product,
+   SUM(c6) AS total_revenue
+FROM Sales_data
+WHERE c2 !='City'
+ AND c3 NOT IN ('Product','Monitor')
+ AND c6>0
+GROUP BY c2,c3
+ORDER BY total_revenue DESC;
+
+SELECT c3 AS product,  
+  c5 AS unit_price
+  c6 AS revenue
+FROM Sales_data
+WHERE c3 NOT IN ('Product','Monitor')
+ AND c6>0;
+
+SELEcT c3 AS product,
+  c5 AS units_sold 
+  c6 AS revenue
+FROM Sales_data
+WHERE c3 NOT IN ('Product','MOnitor')
+ AND c6>0
+
+
