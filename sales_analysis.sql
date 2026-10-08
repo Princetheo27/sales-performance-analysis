@@ -160,11 +160,33 @@ GROUP BY c3
 ORDER BY average_revenue DESC;
 
 SELECT                    
-  SUM(C5) AS total_revenue
+  SUM(C6) AS total_revenue
 FROM Sales_data 
 WHERE c3 NOT IN ('Product','MONITOR')
-AND c5>o;
+AND c6>o;
 
+SELECT
+SUM(c5) AS total_units_sold
+FROM Sales_data
+WHERE c3 NOT IN ('Product','Monitor')
+AND c5>0;
+
+SELECT 
+AVG(c4) AS avarage_unit_price
+FROM Sales_data
+WHERE c3 NOT IN ('Product','Monitor')
+AND c4>0;
+
+SELECT
+c3 AS product,
+SUM(c5) AS total_units_sold,
+SUM(c6) AS total_revenue
+FROM Sales_data
+WHERE c3 NOT IN ('Product','Monitor')
+AND c5>0
+AND c6>0
+GROUP BY c3
+ORDER BY total_revenue DESC;
 
 
 
