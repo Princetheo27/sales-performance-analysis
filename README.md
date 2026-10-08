@@ -43,3 +43,7 @@ Identified products with the highest number of units sold.
 Calculated the average unit price.
 Compared product performance by city.
 
+## Conclusion
+
+This project demonstrates the use of SQL to analyze sale data and identify trends in product and city performance.The analysis provides insights into revenue,unit sold,pricing,and overall sales performance.
+
