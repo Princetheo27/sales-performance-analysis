@@ -5,7 +5,7 @@ SELECT SUM(Revenue) AS total_revenue
 FROM sales;
 
 ## Total Units Sold
-SELECT SUM(Units_sold) AS total_units_sold
+SELECT SUM(Units_sold) AS total_units_sold 
 FROM sales;
 
 ## Revenue by Product
