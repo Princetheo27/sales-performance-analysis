@@ -188,6 +188,17 @@ AND c6>0
 GROUP BY c3
 ORDER BY total_revenue DESC;
 
+SELECT
+c2 AS city,
+c3 AS product,
+SUM(c6) AS total_revenue
+FROM Sales_data
+WHERE c2 NOT IN ('city')
+AND c3 NOT IN ('Product','Monitor')
+AND c6>0
+GROUP BY c2,c3
+ORDER BY total_revenue DESC;
+
 
 
 
